@@ -47,7 +47,11 @@ end
 
 def array_difference(original, comparison)
   # return an array of elements from the original array that are not in the comparison array
-  original - (comparison)
+  # original.difference(comparison)
+  # original - (comparison)
+  arr = []
+  original.each { |element| arr << element unless comparison.include?(element) }
+  arr
 end
 
 def empty_array?(array)
