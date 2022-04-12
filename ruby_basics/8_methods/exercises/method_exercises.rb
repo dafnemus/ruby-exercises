@@ -23,7 +23,7 @@ end
 # return value: games, alphabetically sorted and duplicates removed
 # hint: chain Array#sort and Array#uniq together
 def alphabetical_list(array)
-  array.sort().uniq()
+  array.sort.uniq
 end
 
 # method name: #lucky_number
@@ -39,11 +39,8 @@ end
 # explicit return value: 'Input Error' if character's length does not equal 1
 # hint: use String#ord
 def ascii_code(string)
-  if string.length != 1
-    'Input Error'
-  else
-    string.ord
-  end
+  return 'Input Error' if string.length != 1
+  string.ord
 end
 
 # method name: #pet_pun
@@ -54,13 +51,9 @@ end
 # console output: otherwise, "I think <animal>s have pet-tential!" (potential)
 # hint: use puts
 def pet_pun(pet)
-  if pet == 'cat'
-    puts "Cats are purr-fect!"
-  elsif pet == 'dog'
-    puts "Dogs are paw-some!"
-  else
-    puts "I think #{pet}s have pet-tential!"
-  end
+  return puts "Cats are purr-fect!" if pet == 'cat'
+  return  puts "Dogs are paw-some!" if pet == 'dog'
+  puts "I think #{pet}s have pet-tential!"
 end
 
 # method name: #twenty_first_century?
@@ -69,7 +62,7 @@ end
 # hint: use Comparable#between?
 
 def twenty_first_century?(year)
-  #range_century = (2001..2100)
-  #range_century.to_a.include?(year)
+  # range_century = (2001..2100)
+  # range_century.to_a.include?(year)
   year.between?(2001, 2100)
 end
